@@ -5,7 +5,7 @@ import Home from '../Pages/Home'
 
 const AppRoutes = () => {
   return <Routes>
-    <Route path='/' element={<Home />}></Route>
+    <Route path='/' element={<Category />}></Route>
     <Route path='/:categoryId' element={<Category />}></Route>
   </Routes>
     

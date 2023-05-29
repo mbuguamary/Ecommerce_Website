@@ -1,8 +1,9 @@
 import React from 'react'
 import '../App.css';
-import {Menu} from "antd"
-import {HomeFilled } from "@ant-design/icons"
+import {Badge, Menu} from "antd"
+import {HomeFilled,ShoppingCartOutlined } from "@ant-design/icons"
 import {useNavigate } from 'react-router-dom';
+import Typography from 'antd/es/typography/Typography';
 const AppHeader = () => {
     const navigate=useNavigate();
     const onMenuClick =(item) =>{
@@ -73,7 +74,10 @@ const AppHeader = () => {
             }
            ]} 
         />
-                                          
+       <Typography.Title>Aamir Store</Typography.Title> 
+          <Badge className='shoopingCartIcon' count={7} >
+          <ShoppingCartOutlined />                                
+          </Badge>
         </div>
   );
 }

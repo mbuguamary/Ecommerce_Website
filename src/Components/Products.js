@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import { getAllProducts,addToCart } from '../API'
+import { getAllProducts,addToCart,getProductsByCategory } from '../API'
 import { Badge,Card ,List,Image,Typography,Rate, Button,message} from 'antd'
 import { useParams } from 'react-router-dom'
 const Products = () => {
-  const[items,setItems] = useState([])
+  const [loading,setLoading] = useState(false);
+  const[items,setItems] = useState([]);
  const param =useParams();
  
+ 
   useEffect(()=>{
-    getAllProducts().then(res=>{
+    setLoading(true);
+    (param?.categoryId
+      ? getProductsByCategory(param.categoryId)
+      : getAllProducts()
+    ).then((res)=>{
       setItems(res.products)
-    })
-  } ,[])
+      setLoading(false)
+    });
+  } ,[param])
   return (
     <div>
       <List

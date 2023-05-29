@@ -32,13 +32,10 @@ const AppHeader = () => {
                         key: "mens-shoes",
                        },
                        {
-                        label: "Men's Shoes",
-                        key: "mens-shoes",
+                        label: "Men's Watches",
+                        key: "mens-watches",
                        },
-                       {
-                        label: "Men's Shoes",
-                        key: "mens-shoes",
-                       },
+                       
                     ],
 
             },
@@ -47,27 +44,31 @@ const AppHeader = () => {
                 Key: "women",
                 children: [
                     {
-                     label: "Women's Shirts",
-                     key: "Women-shirts",
-                    },
-                    {
-                        label: "Women's watches",
-                        key: "women's-watches",
-                       },
-                       {
+                        label: "Women's Dresses",
+                        key: "womens-dresses",
+                      },
+                      {
                         label: "Women's Shoes",
-                        key: "Women's-shoes",
-                       },
-                       {
-                        label: "Women's Shoes",
-                        key: "Womens-shoes",
-                       },
+                        key: "womens-shoes",
+                      },
+                      {
+                        label: "Women's Watches",
+                        key: "womens-watches",
+                      },
+                      {
+                        label: "Women's Bags",
+                        key: "womens-bags",
+                      },
+                      {
+                        label: "Women's Jewellery",
+                        key: "womens-jewellery",
+                      },
                     ],
 
             },
             {
                 label: "Fragrances",
-                Key: "Fragraces",
+                Key: "fragrances",
 
             }
            ]} 

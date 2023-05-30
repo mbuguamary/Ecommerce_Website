@@ -104,7 +104,7 @@ const AppHeader = () => {
      <Badge  onClick={() => {
         setCartDrawerOpen(true);
       }}
-      count={7}
+      count={cartItems.length}
       className="shoppingCartIcon"
     >
     <ShoppingCartOutlined />                                
@@ -132,8 +132,21 @@ const AppHeader = () => {
                 {
                     title:"Quantity",
                     dataIndex:"quantity",
-                    render:(value)=>{
-                      return <InputNumber defaultValue={value}></InputNumber>
+                    render:(value,record)=>{
+                      return ( <InputNumber
+                        min={0}
+                        defaultValue={value}
+                        onChange={(value) => {
+                          setCartItems((pre) =>
+                            pre.map((cart) => {
+                              if (record.id === cart.id) {
+                                cart.total = cart.price * value;
+                              }
+                              return cart;
+                            })
+                          );
+                        }}
+                      ></InputNumber>)
                     }
                 },
                 {
